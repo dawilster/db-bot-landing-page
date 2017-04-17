@@ -1,0 +1,51 @@
+body {
+  background-image: url('../images/bg.png');
+  background-size: cover;
+  height: 100vh;
+  background-position: top center;
+  background-color: #2B2F32;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+}
+h2 {
+  font-size: 36px;
+}
+h2,h3 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 20px;
+}
+.main {
+
+}
+@media (max-width: 575px) {
+  .main {
+    padding-top: 50px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .main {
+    padding-top: 75px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .main {
+    padding-top: 125px;
+  }
+  .subscribe {
+    padding-top: 205px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main {
+    padding-top: 200px;
+  }
+  .subscribe {
+    padding-top: 280px;
+  }
+}
