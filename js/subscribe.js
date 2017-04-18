@@ -1,15 +1,25 @@
 $(function() {
   $('#submit-form').click(function() {
-
-    $.post( 'https://upscri.be/wp-admin/admin-ajax.php', {
+    $.ajax({
+      url: 'https://upscri.be/wp-admin/admin-ajax.php',
+      beforeSend: function (request) {
+        request.setRequestHeader("Authorization", "Negotiate");
+      },
+      crossDomain: true,
+      data: {
         action: 'add_list_signup',
         post_id: 14051,
         email: $('#email').val(),
         source: 'https%3A%2F%2Fupscri.be%2F3368df%2F'
-      }, function( data ) {
-      $('#submit-form').text('Success!');
-    }).fail(function() {
-      $('#submit-form').text('Please try again');
+      },
+      async: true,
+      success: function (data) {
+        $('#submit-form').text('Success!');
+      },
+      error: function (xhr, textStatus, errorMessage) {
+        console.log(textStatus);
+        $('#submit-form').text('Please try again');
+      }
     });
 
   });
